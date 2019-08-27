@@ -5,6 +5,10 @@
     <title>Weather Page</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon2.ico"/>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -12,8 +16,13 @@
     <div id="MainWeatherDiv">
         <div id="MainWeatherHeaderDiv">
             <div id="MainWeatherHeaderSearchDiv">
-                <input type="text" placeholder="Search another city">
+                <input id="tags" type="text" placeholder="Search another city">
             </div>
+
+            <!--<div class="ui-widget">-->
+                <!--<label for="tags">Tags: </label>-->
+                <!--<input id="tags">-->
+            <!--</div>-->
         </div>
         <div id="MainWeatherWeeklyDiv">
             <div id="MainWeatherWeeklyDay1DetailsDiv">
@@ -45,5 +54,6 @@
 
 </div>
 
+<script src="js/main.js"></script>
 </body>
 </html>

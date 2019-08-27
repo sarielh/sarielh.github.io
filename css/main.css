@@ -71,6 +71,17 @@ div{
     color: rgb(255,255,255);
 }
 
+ul#ui-id-1 {
+    padding-left: 94px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    background: #b9b9b9 !important;
+    width: 287px !important;
+    color: #000  !important;
+    list-style-type: none  !important;
+    cursor: pointer;
+}
+
 #MainWeather{
     width:100%;
     height:920px;
