@@ -1,0 +1,389 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Muli', 'Helvetica Neue', Helvetica,Arial,sans-serif;
+}
+
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: rgb(255,255,255);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(255,255,255);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(255,255,255);
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(255,255,255);
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: rgb(255,255,255);
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: rgb(255,255,255);
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: rgb(255,255,255);
+}
+
+#MainWeather{
+    width:100%;
+    height:920px;
+    background: #2d33ab;
+}
+
+#MainWeatherDiv{
+    width:1240px;
+    margin:auto;
+}
+
+
+#MainWeatherHeaderDiv{
+    overflow: hidden;
+    padding-right:50px;
+    padding-top:50px;
+}
+
+#MainWeatherHeaderSearchDiv{
+    float:right;
+    width:380px;
+}
+
+input[type=text]{
+    width:100%;
+    height: 60px;
+    outline: none;
+    font-size:24px;
+    font-family: Arial;
+    padding-left: 100px;
+    background: rgba(255,255,255, 0.3);
+    border:none;
+    color:#fff;
+    background-image: url("../images/findicon.png");
+    background-size: 20px 20px;
+    background-position: 40px center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+#MainWeatherWeeklyDiv{
+    width:1240px;
+    padding-left:50px;
+    paddint-right:50px;
+}
+
+#MainWeatherWeeklyDiv{
+    overflow: hidden;
+    padding-top:60px;
+}
+
+#MainWeatherWeeklyDay1DetailsDiv{
+    float:left;
+    width:260px;
+    height: 350px;
+}
+
+.MainWeatherWeeklyDayDetailsDiv{
+    float:left;
+    width:260px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.15);
+    margin-left:30px;
+}
+
+div{
+    font-family: Arial;
+    color:#fff;
+}
+
+#MainWeatherWeeklyDay1DetailsCityNameDiv{
+   font-size:29px
+}
+
+#MainWeatherWeeklyDay1DetailsTodayDiv{
+    font-size:23px;
+    color: #dac3ff;
+}
+
+#MainWeatherWeeklyDay1DetailsTempDiv{
+    font-size: 120px;
+    padding-top: 100px;
+}
+
+#MainWeatherWeeklyDay1DetailsDescDiv{
+    font-size:29px
+}
+
+
+.MainWeatherWeeklyDayDetailsDiv{
+    padding-top:20px;
+
+}
+
+.WeatherDailyDiv{
+    font-size:18px;
+    padding-left:20px;
+}
+
+#WeatherDailyImage1Div{
+    background: url("../images/016-sun.png");
+    height:160px;
+    width:160px;
+    margin:auto;
+    margin-top: 25px;
+    background-size: 160px 160px;
+}
+
+.WeatherDailyTempDiv{
+    padding-left:20px;
+    font-size:38px;
+    padding-top:30px;
+}
+
+.WeatherDailyDescDiv{
+    padding-left:20px;
+    font-size:22px;
+    padding-top:10px;
+}
+
+#WeatherDailyImage2Div{
+    background: url("../images/010-raining.png");
+    height:160px;
+    width:160px;
+    margin:auto;
+    margin-top: 25px;
+    background-size: 160px 160px;
+}
+
+#WeatherDailyImage3Div{
+    background: url("../images/011-cloudy.png");
+    height:160px;
+    width:160px;
+    margin:auto;
+    margin-top: 25px;
+    background-size: 160px 160px;
+}
+
+@media only screen and (max-width: 1239px) {
+
+    #MainWeatherDiv{
+        width:1024px;
+    }
+
+    #MainWeatherWeeklyDiv{
+        width:1024px;
+    }
+
+    #MainWeatherWeeklyDay1DetailsDiv{
+        width:212px;
+    }
+
+    .MainWeatherWeeklyDayDetailsDiv{
+        width:212px;
+        margin-left:25px;
+    }
+
+    #WeatherDailyImage1Div, #WeatherDailyImage2Div, #WeatherDailyImage3Div{
+        background-size: 120px 120px;
+        width:120px;
+        height:120px;
+    }
+
+    #MainWeatherHeaderSearchDiv{
+        width:300px;
+    }
+
+    input[type=text]{
+        font-size:20px;
+        padding-left:70px;
+        background-position-x: 25px;
+    }
+
+    #MainWeatherWeeklyDay1DetailsTempDiv{
+        font-size:100px;
+    }
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+    #MainWeather{
+        height:auto;
+    }
+
+    #MainWeatherHeaderDiv{
+        padding-right:0px;
+        padding-top:20px;
+    }
+
+    #MainWeatherDiv{
+        width:768px;
+    }
+
+    #MainWeatherHeaderSearchDiv{
+        width:350px;
+        float:none;
+        margin:auto;
+    }
+
+    input[type=text]{
+        height:40px;
+    }
+
+    #MainWeatherWeeklyDiv{
+        width:768px;
+        margin:auto;
+        padding-left: 0;
+        padding-top:30px;
+    }
+
+    #MainWeatherWeeklyDay1DetailsDiv{
+        float:none;
+        margin:auto;
+    }
+
+    #MainWeatherWeeklyDay2DetailsDiv, #MainWeatherWeeklyDay3DetailsDiv, #MainWeatherWeeklyDay4DetailsDiv{
+        float:none;
+        margin-left:0;
+        margin:auto;
+        margin-top:20px;
+        height:330px;
+    }
+
+    #MainWeatherWeeklyDay1DetailsTempDiv{
+        font-size:77px;
+        padding-top: 45px;
+    }
+
+    #MainWeatherWeeklyDay1DetailsDiv{
+        height: 230px;
+        padding-left: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    #MainWeatherDiv {
+        width: 350px;
+    }
+
+    #MainWeatherWeeklyDiv {
+        width: 350px;
+    }
+
+    #MainWeatherHeaderSearchDiv{
+        width:280px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
