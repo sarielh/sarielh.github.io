@@ -332,6 +332,11 @@ div{
     #MainWeatherHeaderSearchDiv{
         width:280px;
     }
+
+    ul#ui-id-1 {
+        width:186px !important;
+    }
+
 }
 
 
