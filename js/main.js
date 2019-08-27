@@ -29,6 +29,15 @@ $(document).ready(function(){
         switch($('#tags').val()) {
             case 'Tel-Aviv':
 
+                var field = document.createElement('input');
+                
+                setTimeout(function() {
+                    field.focus();
+                    setTimeout(function() {
+                        field.setAttribute('style', 'display:none;');
+                    }, 50);
+                }, 50);
+
                 $("#MainWeatherWeeklyDiv").fadeOut(500, function() {});
                 $("#MainWeatherWeeklyDiv").fadeIn(1000, function() {});
 
