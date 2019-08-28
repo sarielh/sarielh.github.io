@@ -2,7 +2,9 @@
 $(document).ready(function(){
 
 $.getJSON('countries.json', function(data) {
-    console.log(data[0]);
+    console.log(data);
+    var data2 = JSON.parse(this.response)
+    console.log(data2);
 });
 
 
