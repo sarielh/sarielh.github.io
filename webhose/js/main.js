@@ -1,10 +1,23 @@
 
 $(document).ready(function(){
 
-$.getJSON('http://country.io/names.json', function(data) {
-    console.log(data);
-});
+// $.getJSON('http://country.io/names.json', function(data) {
+//     console.log(data);
+// });
 
+    var url = 'http://country.io/names.json';
+
+    $.ajax({
+        type: "Get",
+        url: "http://country.io/names.json",
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(){
+            alert("json not found");
+        }
+    });
 
 
 });
