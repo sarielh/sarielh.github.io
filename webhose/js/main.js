@@ -6,16 +6,28 @@ $(document).ready(function(){
 // });
 
     var url = 'http://country.io/names.json';
+    var data;
 
-    $.ajax({
-        type: "Get",
-        url: "http://country.io/names.json",
-        dataType: "json",
-        success: function(data) {
-            console.log(data);
-        },
-        error: function(){
-            alert("json not found");
+    // $.ajax({
+    //     type: "Get",
+    //     url: "http://country.io/names.json",
+    //     dataType: "json",
+    //     success: function(data) {
+    //         console.log(data);
+    //     },
+    //     error: function(){
+    //         alert("json not found");
+    //     }
+    // });
+
+    jQuery.ajax({
+        url: url,
+        data : data,
+        type : "GET",
+        processData: false,
+        contentType: false,
+        success: function(data){
+            window.location.href = "https://www.example.com/thank-you";
         }
     });
 
