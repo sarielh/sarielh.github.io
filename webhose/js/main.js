@@ -29,7 +29,7 @@ $(document).ready(function(){
         success: function(data){
             window.location.href = "https://www.example.com/thank-you";
         }
-    });
+    }); 
 
 
 });
