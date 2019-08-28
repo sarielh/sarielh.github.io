@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: "Get",
-        url: "https://country.io/names.json",
+        url: "http://country.io/names.json",
         dataType: "json",
         success: function(data) {
             console.log(data);
