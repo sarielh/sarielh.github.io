@@ -13,7 +13,7 @@ $.getJSON('countries.json', function(data) {
 
     $('SourceCountry').append(option_country);
 
-});
+}); 
 
 // $('#MainDiv').append('<div>Sariel Hadas is here!</div>');
 
