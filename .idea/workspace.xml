@@ -57,8 +57,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webhose/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="488">
-                  <caret line="37" column="42" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="42" />
+                <state relative-caret-position="467">
+                  <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -129,10 +129,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/webhose/css/main.css" />
-        <option value="$PROJECT_DIR$/webhose/index.html" />
         <option value="$PROJECT_DIR$/webhose/package.json" />
         <option value="$PROJECT_DIR$/webhose/countries.json" />
         <option value="$PROJECT_DIR$/webhose/js/main.js" />
+        <option value="$PROJECT_DIR$/webhose/index.html" />
       </list>
     </option>
   </component>
@@ -213,12 +213,12 @@
       <option name="presentableId" value="Default" />
       <updated>1566991566642</updated>
       <workItem from="1566991568038" duration="11024000" />
-      <workItem from="1567012325236" duration="2329000" />
+      <workItem from="1567012325236" duration="2487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13353000" />
+    <option name="totallyTimeSpent" value="13511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
@@ -281,23 +281,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webhose/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webhose/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="37" column="42" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="42" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/webhose/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webhose/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
         </state>
       </provider>
     </entry>
