@@ -73,7 +73,8 @@ div{
 
 #MainDiv{
     width:640px;
-    height:600px;
+    /*height:600px;*/
+    padding-bottom: 40px;
     background: #e3e3e3;
     margin:auto;
     margin-top:20px;
@@ -135,6 +136,9 @@ table, th, td {
     border: 1px solid black;
 }
 
+#coverage_request{
+    margin-top:20px;
+}
 
 
 
