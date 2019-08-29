@@ -22,7 +22,8 @@ $("#SubmitBtn").click(function(){
     var client_email = $('#Email')[0].value;
     var client_domain = $('#Domain')[0].value;
     var source_type = $('#SourceType').val();
-    var source_country = $('#SourceCountry')[0].innerText;
+    // var source_country = $('#SourceCountry')[0].innerText;
+    var source_country = $("select#SourceCountry option").filter(":selected").text();
     var reason = $('#Reason')[0].value;
 
     var coverage_request = {Email : client_email, Domain: client_domain, SourceType: source_type, SourceCountry: source_country, Reason:reason};
