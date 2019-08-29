@@ -15,6 +15,7 @@ $.getJSON('countries.json', function(data) {
 
 });
 
+var all_coverage_request = [];
 
 $("#SubmitBtn").click(function(){
 
@@ -24,9 +25,12 @@ $("#SubmitBtn").click(function(){
     var source_country = $('#SourceCountry')[0].innerText;
     var reason = $('#Reason')[0].value;
 
+    var coverage_request = {Email : client_email, Domain: client_domain, SourceType: source_type, reason:reason};
 
 
-    console.log(reason);
+    all_coverage_request.push(coverage_request);
+
+    console.log(all_coverage_request);
 });
 
 
