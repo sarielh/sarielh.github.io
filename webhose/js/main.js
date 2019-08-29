@@ -32,25 +32,26 @@ $("#SubmitBtn").click(function(){
 
     console.log(all_coverage_request);
 
-    // all_coverage_request.forEach((user)=>console.log(user.Email));
+    var table_request = "<table><tr>";
+    table_request += "<th>Email</th>";
+    table_request += "<th>Domain</th>";
+    table_request += "<th>Source Type</th>";
+    table_request += "<th>Reason</th>";
+    table_request += "</tr><tr>";
 
-    // var table_request = "<table><tr>";
-    // table_request += "<th>Email</th>";
-    // table_request += "<th>Domain</th>";
-    // table_request += "<th>Source Type</th>";
-    // table_request += "<th>Reason</th>";
-    // table_request += "</tr><tr>";
-
+    for(let user of all_coverage_request){
+        console.log(user.Email,user.Domain)
+        table_request += "<th>'+ user.Email +'</th>";
+    }
 
     // for (const [key, value] of Object.entries(all_coverage_request)) {
     //     console.log(key, value);
     // }
 
 
+    table_request += "</tr></table>";
 
-    // table_request += "</tr></table>";
-    //
-    // $('#MainDiv').append(table_request);
+    $('#MainDiv').append(table_request);
 });
 
 
