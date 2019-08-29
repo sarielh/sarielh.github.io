@@ -3,8 +3,14 @@ $(document).ready(function(){
 
 $.getJSON('countries.json', function(data) {
     console.log(data);
-    var data2 = JSON.parse(data);
-    console.log(data2);
+
+    // const test = {a: 1, b: 2, c: 3};
+
+    for (const [key, value] of Object.entries(data)) {
+        console.log(key, value);
+    }
+    // var data2 = JSON.parse(data);
+    // console.log(data2);
 });
 
 
