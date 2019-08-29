@@ -7,7 +7,7 @@ $.getJSON('countries.json', function(data) {
     var option_country = '';
 
     for (const [key, value] of Object.entries(data)) {
-        console.log(key, value);
+        // console.log(key, value);
         option_country += '<option value="'+ key +'" >'+ value +'</option>';
     }
 
@@ -15,7 +15,10 @@ $.getJSON('countries.json', function(data) {
 
 });
 
-// $('#MainDiv').append('<div>Sariel Hadas is here!</div>');
+    $("#SubmitBtn").click(function(){
+        alert("Sariel Hadas is Here!");
+    });
+
 
 
 });
