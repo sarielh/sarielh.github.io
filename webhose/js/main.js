@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 $.getJSON('countries.json', function(data) {
-    console.log(data);
+    // console.log(data);
 
     var option_country = '';
 
@@ -15,9 +15,19 @@ $.getJSON('countries.json', function(data) {
 
 });
 
-    $("#SubmitBtn").click(function(){
-        alert("Sariel Hadas is Here!");
-    });
+
+$("#SubmitBtn").click(function(){
+
+    var client_email = $('#Email')[0].value;
+    var client_domain = $('#Domain')[0].value;
+    var source_type = $('#SourceType').val();
+    var source_country = $('#SourceCountry')[0].innerText;
+    var reason = $('#Reason')[0].value;
+
+
+
+    console.log(reason);
+});
 
 
 
