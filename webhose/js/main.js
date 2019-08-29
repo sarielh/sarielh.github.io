@@ -30,26 +30,27 @@ $("#SubmitBtn").click(function(){
 
     all_coverage_request.push(coverage_request);
 
-    // console.log(all_coverage_request);
+    console.log(all_coverage_request);
 
-    var table_request = "<table><tr>";
-    table_request += "<th>Email</th>";
-    table_request += "<th>Domain</th>";
-    table_request += "<th>Source Type</th>";
-    table_request += "<th>Reason</th>";
-    table_request += "</tr><tr>";
+    // all_coverage_request.forEach((user)=>console.log(user.Email));
+
+    // var table_request = "<table><tr>";
+    // table_request += "<th>Email</th>";
+    // table_request += "<th>Domain</th>";
+    // table_request += "<th>Source Type</th>";
+    // table_request += "<th>Reason</th>";
+    // table_request += "</tr><tr>";
 
 
-    for (const [key, value] of Object.entries(all_coverage_request)) {
-        console.log(key, value);
-        var value_test = value;
-        connsole.log(value_test);
-        table_request += "<td>'+ value +'</td>";
-    }
+    // for (const [key, value] of Object.entries(all_coverage_request)) {
+    //     console.log(key, value);
+    // }
 
-    table_request += "</tr></table>";
 
-    $('#MainDiv').append(table_request);
+
+    // table_request += "</tr></table>";
+    //
+    // $('#MainDiv').append(table_request);
 });
 
 
