@@ -25,13 +25,38 @@ $("#SubmitBtn").click(function(){
         var element = document.getElementById("Email");
         var valid = true;
         (element && element.value) ? valid = true : valid = false;
+
         var error_element = $("#errorEmail");
-        if (!valid) {
+        var error_valid_element = $("#errorEmailValid");
+
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        // if (validateEmail(element.value)) {
+        //     valid = true;
+        //     error_valid_element.removeClass("error_show").addClass("error");
+        //     console.log("Email is Vaild!");
+        // } else {
+        //     valid = false;
+        //     error_element.removeClass("error_show").addClass("error");
+        //     error_valid_element.removeClass("error").addClass("error_show");
+        //     console.log("Email is not Vaild!");
+        // }
+
+        if ((!valid && !validateEmail(element.value) || !valid && validateEmail(element.value))) {
             error_element.removeClass("error").addClass("error_show");
+            error_valid_element.removeClass("error_show").addClass("error");
             error_free = false;
 
+        } else if (!validateEmail(element.value)){
+            error_valid_element.removeClass("error").addClass("error_show");
+            error_element.removeClass("error_show").addClass("error");
+            error_free = false;
         } else {
             error_element.removeClass("error_show").addClass("error");
+            error_valid_element.removeClass("error_show").addClass("error");
         }
     }
 
