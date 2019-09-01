@@ -153,6 +153,16 @@ table, th, td {
     padding-top:5px;
 }
 
+.DeleteButton{
+    cursor: pointer;
+}
+
+.DeleteButton{
+    background: url("../images/x_icon.png");
+    width:20px;
+    height:20px;
+    background-size: 20px 20px;
+}
 
 
 

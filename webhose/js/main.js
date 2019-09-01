@@ -50,7 +50,7 @@ $("#SubmitBtn").click(function(){
     }
 
     var form_data = $("#MainForm").serializeArray();
-    var error_free = true;
+    // var error_free = true;
     for (var input in form_data) {
         var element = document.getElementById("Domain");
         var valid = true;
@@ -131,6 +131,7 @@ $("#SubmitBtn").click(function(){
         console.log(all_coverage_request);
 
         var table_request = "<table id='coverage_request'><tr>";
+        table_request += "<th></th>";
         table_request += "<th>Email</th>";
         table_request += "<th>Domain</th>";
         table_request += "<th>Source Type</th>";
@@ -138,19 +139,18 @@ $("#SubmitBtn").click(function(){
         table_request += "<th>Reason</th>";
         table_request += "</tr>";
 
+        var index_delete = 0;
+
         for(let user of all_coverage_request){
-            console.log(user.Email, user.Domain, user.SourceType,user.SourceCountry, user.Reason)
-            table_request += '<tr></tr><th>'+ user.Email +'</th>';
+            // console.log(user.Email, user.Domain, user.SourceType,user.SourceCountry, user.Reason)
+            table_request += '<tr><th><div class="DeleteButton" id="'+ index_delete +'"></div></th>';
+            table_request += '<th>'+ user.Email +'</th>';
             table_request += '<th>'+ user.Domain +'</th>';
             table_request += '<th>'+ user.SourceType +'</th>';
             table_request += '<th>'+ user.SourceCountry +'</th>';
             table_request += '<th>'+ user.Reason +'</th></tr>';
-
+            index_delete++;
         }
-
-        // for (const [key, value] of Object.entries(all_coverage_request)) {
-        //     console.log(key, value);
-        // }
 
 
         table_request += "</table>";
@@ -168,6 +168,44 @@ $("#SubmitBtn").click(function(){
 
 
 });
+
+    $(document).on('click', '.DeleteButton', function(){
+
+        // var index = all_coverage_request.indexOf(5);
+        //
+        // all_coverage_request.splice(index, this.id);
+
+        all_coverage_request.splice(this.id, 1);
+
+
+        var table_request = "<table id='coverage_request'><tr>";
+        table_request += "<th></th>";
+        table_request += "<th>Email</th>";
+        table_request += "<th>Domain</th>";
+        table_request += "<th>Source Type</th>";
+        table_request += "<th>Source Country</th>";
+        table_request += "<th>Reason</th>";
+        table_request += "</tr>";
+
+        var index_delete = 0;
+
+        for(let user of all_coverage_request){
+            table_request += '<tr><th><div class="DeleteButton" id="'+ index_delete +'"></div></th>';
+            table_request += '<th>'+ user.Email +'</th>';
+            table_request += '<th>'+ user.Domain +'</th>';
+            table_request += '<th>'+ user.SourceType +'</th>';
+            table_request += '<th>'+ user.SourceCountry +'</th>';
+            table_request += '<th>'+ user.Reason +'</th></tr>';
+            index_delete++;
+        }
+
+        $("#coverage_request").remove();
+        $('#MainDiv').append(table_request);
+
+        // console.log(all_coverage_request);
+        // console.log(this.id);
+
+    });
 
 
 
