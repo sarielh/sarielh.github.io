@@ -140,8 +140,18 @@ table, th, td {
     margin-top:20px;
 }
 
+.error{
+    display:none;
+}
 
 
+.error_show{
+    display:block;
+    font-size:13px;
+    font-family: 'Arial';
+    color: #bd4100;
+    padding-top:5px;
+}
 
 
 

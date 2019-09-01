@@ -12,33 +12,42 @@
 <div id="MainDiv">
     <div id="MainFormDiv">
 
-        <form>
+        <form id="MainForm">
             <div class="MainFormLabelDiv">Your Email :</div>
             <div class="MainFormInputDiv">
                 <input id="Email" type="email">
             </div>
+            <div class="error" id="errorEmail">This field is required</div>
 
             <div class="MainFormLabelDiv">Your Domain :</div>
             <div class="MainFormInputDiv">
                 <input id="Domain" type="text">
             </div>
+            <div class="error" id="errorDomain">This field is required</div>
+
 
             <div class="MainFormLabelDiv">Source Type :</div>
             <div class="MainFormInputDiv">
                 <select id="SourceType">
+                    <option value="0">--Select Source</option>
                     <option value="news">News</option>
                     <option value="blogs">Blogs</option>
                     <option value="discussions">Discussions</option>
                     <option value="reviews">Reviews</option>
                 </select>
             </div>
+            <div class="error" id="errorSource">This field is required</div>
+
 
             <div class="MainFormLabelDiv">Source Country :</div>
             <div class="MainFormInputDiv">
                 <select id="SourceCountry">
+                    <option value="0">--Select Country</option>
                     <option value="Test-c">Test Country</option>
                 </select>
             </div>
+            <div class="error" id="errorCountry">This field is required</div>
+
 
             <div class="MainFormLabelDiv">Reason:</div>
             <div class="MainFormInputDiv">
@@ -46,6 +55,7 @@
             </div>
 
             <div id="SubmitBtn">Submit</div>
+            <input type="hidden" name="ajax_url" value="">
 
 
         </form>
