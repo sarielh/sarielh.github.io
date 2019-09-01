@@ -159,6 +159,12 @@ $("#SubmitBtn").click(function(){
         $('#MainDiv').append(table_request);
     }
 
+    $('#Email')[0].value = '';
+    $('#Domain')[0].value = '';
+    $('#SourceType')[0].value = '0';
+    $('#SourceCountry')[0].value = '0';
+    $('#Reason')[0].value= '';
+
 });
 
 
