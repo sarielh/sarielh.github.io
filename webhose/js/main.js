@@ -34,17 +34,6 @@ $("#SubmitBtn").click(function(){
             return re.test(email);
         }
 
-        // if (validateEmail(element.value)) {
-        //     valid = true;
-        //     error_valid_element.removeClass("error_show").addClass("error");
-        //     console.log("Email is Vaild!");
-        // } else {
-        //     valid = false;
-        //     error_element.removeClass("error_show").addClass("error");
-        //     error_valid_element.removeClass("error").addClass("error_show");
-        //     console.log("Email is not Vaild!");
-        // }
-
         if ((!valid && !validateEmail(element.value) || !valid && validateEmail(element.value))) {
             error_element.removeClass("error").addClass("error_show");
             error_valid_element.removeClass("error_show").addClass("error");
@@ -61,18 +50,32 @@ $("#SubmitBtn").click(function(){
     }
 
     var form_data = $("#MainForm").serializeArray();
-    // var error_free = true;
+    var error_free = true;
     for (var input in form_data) {
         var element = document.getElementById("Domain");
         var valid = true;
         (element && element.value) ? valid = true : valid = false;
+
         var error_element = $("#errorDomain");
-        if (!valid) {
+        var error_valid_element = $("#errorDomainValid");
+
+        function CheckIsValidDomain(domain) {
+            var re = new RegExp(/^((?:(?:(?:\w[\.\-\+]?)*)\w)+)((?:(?:(?:\w[\.\-\+]?){0,62})\w)+)\.(\w{2,6})$/);
+            return domain.match(re);
+        }
+
+        if ((!valid && !CheckIsValidDomain(element.value) || !valid && validateEmail(element.value))) {
             error_element.removeClass("error").addClass("error_show");
+            error_valid_element.removeClass("error_show").addClass("error");
             error_free = false;
 
+        } else if (!CheckIsValidDomain(element.value)){
+            error_valid_element.removeClass("error").addClass("error_show");
+            error_element.removeClass("error_show").addClass("error");
+            error_free = false;
         } else {
             error_element.removeClass("error_show").addClass("error");
+            error_valid_element.removeClass("error_show").addClass("error");
         }
     }
 
