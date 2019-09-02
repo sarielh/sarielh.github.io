@@ -164,6 +164,11 @@ table, th, td {
     background-size: 20px 20px;
 }
 
+th {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 
 
