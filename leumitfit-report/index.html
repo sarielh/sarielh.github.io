@@ -1,45 +1,108 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
+<!doctype html>
+<html lang="he" dir="rtl">
 <head>
-    <meta charset="utf-8">
-    <meta name="allure-report-uuid" content="ec37be0a-b8b3-4a5f-84ae-eb643d8c9a8f">
-    <title>Allure Report</title>
-    <link rel="icon" href="assets/favicon-BDLHVmV7.ico">
-    <!-- allure-core-head:start -->
-    <!-- allure-core-head:end -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>לוח בקרת בדיקות - Leumit FIT+</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --head: #273449;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #a855f7;
+    --border: #334155;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #1a2035);
+    color: var(--text);
+    padding: 48px 24px;
+    min-height: 100vh;
+  }
+  .container { max-width: 980px; margin: 0 auto; }
+  h1 {
+    font-size: 30px;
+    margin: 0 0 4px;
+    background: linear-gradient(90deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+  .subtitle { color: var(--muted); margin-bottom: 32px; font-size: 14px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  }
+  th {
+    text-align: right;
+    padding: 16px 20px;
+    background: var(--head);
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  td {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 15px;
+  }
+  tbody tr { cursor: pointer; transition: background 0.15s; }
+  tbody tr:hover { background: #263449; }
+  .badge {
+    color: white;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .view-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .view-link:hover { text-decoration: underline; }
+  .empty { text-align: center; padding: 60px; color: var(--muted); }
+  footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 24px; }
+</style>
 </head>
 <body>
-    <div id="alert"></div>
-    <div id="content">
-        <span class="spinner">
-            <span class="spinner__circle"></span>
-        </span>
-    </div>
-    <div id="popup"></div>
-    <!-- allure-core-body:start -->
-    <script>
-        window.__allureCoreLoaded = new Promise(function (resolve, reject) {
-        window.__allureResolveCoreLoaded = resolve;
-        window.__allureRejectCoreLoaded = reject;
-    });
-    </script>
-    <script src="assets/index-TNctPo69.js"></script>
-    <script>
-        if (typeof window.__allureResolveCoreLoaded === "function") {
-            window.__allureResolveCoreLoaded([]);
-        }
-    </script>
-    <!-- allure-core-body:end -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVWC4GKEYS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FVWC4GKEYS', {
-          'allureVersion': '2.44.0',
-          'reportUuid': 'ec37be0a-b8b3-4a5f-84ae-eb643d8c9a8f',
-          'single_file': false
-        });
-    </script>
+  <div class="container">
+    <h1>לוח בקרת בדיקות</h1>
+    <div class="subtitle">Leumit FIT+ &middot; סוויטת בדיקות אוטומטיות &middot; 1 ריצות</div>
+    <table>
+      <thead>
+        <tr>
+          <th>גרסה</th>
+          <th>תאריך</th>
+          <th>שעה</th>
+          <th>תוצאה</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        
+    <tr onclick="location.href='runs/288_dev__20260818_153342/index.html'">
+      <td>288 dev</td>
+      <td>18/08/2026</td>
+      <td>15:33:42</td>
+      <td><span class="badge" style="background:#dc2626">7/8 עברו</span></td>
+      <td><a href="runs/288_dev__20260818_153342/index.html" class="view-link">צפייה בדוח ←</a></td>
+    </tr>
+      </tbody>
+    </table>
+    <footer>עודכן לאחרונה: 18/08/2026 15:43:50</footer>
+  </div>
 </body>
 </html>

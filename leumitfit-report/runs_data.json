@@ -1,0 +1,17 @@
+[
+  {
+    "folder": "288_dev__20260818_153342",
+    "version": "288 dev",
+    "date": "18/08/2026",
+    "time": "15:33:42",
+    "sort_key": "2026-08-18T15:33:42.016332",
+    "stats": {
+      "total": 8,
+      "passed": 7,
+      "failed": 0,
+      "broken": 1,
+      "skipped": 0,
+      "unknown": 0
+    }
+  }
+]
