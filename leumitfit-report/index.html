@@ -4,112 +4,304 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>לוח בקרת בדיקות - Leumit FIT+</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%B0%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --head: #273449;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --accent: #a855f7;
-    --border: #334155;
+    --bg: #050506;
+    --card: rgba(255,255,255,0.035);
+    --head: rgba(255,255,255,0.02);
+    --text: #eeeff5;
+    --muted: #888ca0;
+    --violet: #8b7cf6;
+    --violet-2: #6d5ef8;
+    --green: #34d399;
+    --green-2: #10b981;
+    --rose: #fb7185;
+    --border: rgba(255,255,255,0.08);
   }
   * { box-sizing: border-box; }
+  html { background: var(--bg); }
   body {
     margin: 0;
-    font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(180deg, var(--bg), #1a2035);
+    font-family: 'Rubik', -apple-system, 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    padding: 48px 24px;
+    padding: 56px 28px 40px;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
   }
-  .container { max-width: 980px; margin: 0 auto; }
+  body::before {
+    content: "";
+    position: fixed; inset: 0; z-index: -2;
+    background:
+      radial-gradient(650px circle at 14% 12%, rgba(139,124,246,0.17), transparent 60%),
+      radial-gradient(600px circle at 88% 8%, rgba(109,94,248,0.12), transparent 60%),
+      radial-gradient(720px circle at 50% 108%, rgba(52,211,153,0.07), transparent 60%),
+      var(--bg);
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, black 35%, transparent 85%);
+    mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, black 35%, transparent 85%);
+  }
+  .container { max-width: 1040px; margin: 0 auto; }
+  .topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
   h1 {
-    font-size: 30px;
-    margin: 0 0 4px;
-    background: linear-gradient(90deg, #a855f7, #ec4899);
+    font-size: 33px;
+    font-weight: 800;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+    background: linear-gradient(90deg, #b9adfa, #8b7cf6 60%, #6d5ef8);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     display: inline-block;
   }
-  .subtitle { color: var(--muted); margin-bottom: 32px; font-size: 14px; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--card);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-  }
-  th {
-    text-align: right;
-    padding: 16px 20px;
-    background: var(--head);
-    color: var(--muted);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  td {
-    padding: 16px 20px;
-    border-top: 1px solid var(--border);
-    font-size: 15px;
-  }
-  tbody tr { cursor: pointer; transition: background 0.15s; }
-  tbody tr:hover { background: #263449; }
-  .badge {
-    color: white;
-    padding: 5px 14px;
+  .subtitle { color: var(--muted); font-size: 14px; }
+  .subtitle .sep { margin: 0 8px; opacity: 0.5; }
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 18px;
     border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     font-size: 13px;
-    font-weight: 600;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
     white-space: nowrap;
   }
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgba(52,211,153,0.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52,211,153,0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(52,211,153,0); }
+    100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 22px 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .stat-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.16); }
+  .stat-card .icon {
+    width: 42px; height: 42px;
+    border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  .stat-card .icon svg { width: 20px; height: 20px; }
+  .icon.violet {
+    background: linear-gradient(135deg, var(--violet), var(--violet-2));
+    box-shadow: 0 10px 24px -6px rgba(139,124,246,0.55);
+  }
+  .icon.green {
+    background: linear-gradient(135deg, var(--green), var(--green-2));
+    box-shadow: 0 10px 24px -6px rgba(52,211,153,0.5);
+  }
+  .stat-card .value {
+    font-size: 27px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .stat-card.tone-green .value { color: #6ee7b7; }
+  .stat-card .label { color: var(--muted); font-size: 12.5px; margin-top: 7px; }
+  .section-title {
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 4px 14px;
+    font-weight: 600;
+  }
+  .table-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    text-align: right;
+    padding: 16px 22px;
+    background: var(--head);
+    color: var(--muted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 16px 22px;
+    border-top: 1px solid var(--border);
+    font-size: 14.5px;
+  }
+  td.mono { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 13.5px; }
+  tbody tr { cursor: pointer; transition: background 0.15s ease; }
+  tbody tr:hover { background: rgba(255,255,255,0.045); }
+  .version-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: rgba(139,124,246,0.1);
+    border: 1px solid rgba(139,124,246,0.28);
+    padding: 3px 11px;
+    border-radius: 8px;
+    color: #cdc5fc;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .badge.ok { background: rgba(52,211,153,0.12); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.28); }
+  .badge.ok .dot { background: #6ee7b7; box-shadow: 0 0 8px rgba(110,231,183,0.7); }
+  .badge.fail { background: rgba(251,113,133,0.12); color: var(--rose); border: 1px solid rgba(251,113,133,0.28); }
+  .badge.fail .dot { background: var(--rose); box-shadow: 0 0 8px rgba(251,113,133,0.7); }
   .view-link {
-    color: var(--accent);
+    color: #c4baf9;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.15s ease, color 0.15s ease;
   }
-  .view-link:hover { text-decoration: underline; }
-  .empty { text-align: center; padding: 60px; color: var(--muted); }
-  footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 24px; }
+  .view-link:hover { gap: 9px; color: #d9d1ff; }
+  .view-link .chev { width: 13px; height: 13px; }
+  .empty { text-align: center; padding: 70px 20px; color: var(--muted); }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  footer .fdot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px rgba(52,211,153,0.7);
+  }
 </style>
 </head>
 <body>
   <div class="container">
-    <h1>לוח בקרת בדיקות</h1>
-    <div class="subtitle">Leumit FIT+ &middot; סוויטת בדיקות אוטומטיות &middot; 2 ריצות</div>
-    <table>
-      <thead>
-        <tr>
-          <th>גרסה</th>
-          <th>תאריך</th>
-          <th>שעה</th>
-          <th>תוצאה</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        
+    <div class="topbar">
+      <div>
+        <h1>לוח בקרת בדיקות</h1>
+        <div class="subtitle">Leumit FIT+<span class="sep">&middot;</span>סוויטת בדיקות אוטומטיות<span class="sep">&middot;</span>2 ריצות</div>
+      </div>
+      <div class="live-badge"><span class="live-dot"></span>מערכת פעילה</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <div class="value">2</div>
+        <div class="label">סה״כ ריצות</div>
+      </div>
+      <div class="stat-card tone-green">
+        <div class="icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12.3l2 2 4-4.3"/></svg></div>
+        <div class="value">94%</div>
+        <div class="label">אחוז הצלחה כללי</div>
+      </div>
+      <div class="stat-card tone-green">
+        <div class="icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3-3 4-3 8a3 3 0 0 0 6 0c0-1-.5-2-1-3 2 1 4 3.5 4 6.5A6.5 6.5 0 0 1 5.5 20 6.5 6.5 0 0 1 4 13.5C4 9 8 6 12 2z"/></svg></div>
+        <div class="value">1</div>
+        <div class="label">סטרייק ריצות ירוקות</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <div class="value" style="font-size:18px">18/08/2026 &middot; 20:29:29</div>
+        <div class="label">ריצה אחרונה</div>
+      </div>
+    </div>
+
+    <div class="section-title">היסטוריית ריצות</div>
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>גרסה</th>
+            <th>תאריך</th>
+            <th>שעה</th>
+            <th>תוצאה</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          
     <tr onclick="location.href='runs/1.30.6__289__d__20260818_202929/index.html'">
-      <td>1.30.6 (289) d</td>
+      <td><span class="version-chip">1.30.6 (289) d</span></td>
       <td>18/08/2026</td>
-      <td>20:29:29</td>
-      <td><span class="badge" style="background:#16a34a">8/8 עברו</span></td>
-      <td><a href="runs/1.30.6__289__d__20260818_202929/index.html" class="view-link">צפייה בדוח ←</a></td>
+      <td class="mono">20:29:29</td>
+      <td><span class="badge ok"><span class="dot"></span>8/8 עברו</span></td>
+      <td><a href="runs/1.30.6__289__d__20260818_202929/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
     <tr onclick="location.href='runs/288_dev__20260818_153342/index.html'">
-      <td>1.30.6 (288) d</td>
+      <td><span class="version-chip">1.30.6 (288) d</span></td>
       <td>18/08/2026</td>
-      <td>15:33:42</td>
-      <td><span class="badge" style="background:#dc2626">7/8 עברו</span></td>
-      <td><a href="runs/288_dev__20260818_153342/index.html" class="view-link">צפייה בדוח ←</a></td>
+      <td class="mono">15:33:42</td>
+      <td><span class="badge fail"><span class="dot"></span>7/8 עברו</span></td>
+      <td><a href="runs/288_dev__20260818_153342/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
-      </tbody>
-    </table>
-    <footer>עודכן לאחרונה: 18/08/2026 20:29:29</footer>
+        </tbody>
+      </table>
+    </div>
+    <footer><span class="fdot"></span>עודכן לאחרונה: 18/08/2026 20:54:10</footer>
   </div>
 </body>
 </html>
