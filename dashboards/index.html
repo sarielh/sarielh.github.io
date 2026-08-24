@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מרכז בקרת אוטומציה</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%B0%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050506;
+    --card: rgba(255,255,255,0.035);
+    --head: rgba(255,255,255,0.02);
+    --text: #eeeff5;
+    --muted: #888ca0;
+    --violet: #8b7cf6;
+    --violet-2: #6d5ef8;
+    --green: #34d399;
+    --green-2: #10b981;
+    --rose: #fb7185;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body {
+    margin: 0;
+    font-family: 'Rubik', -apple-system, 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 72px 28px 48px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0; z-index: -2;
+    background:
+      radial-gradient(650px circle at 14% 12%, rgba(139,124,246,0.17), transparent 60%),
+      radial-gradient(600px circle at 88% 8%, rgba(52,211,153,0.12), transparent 60%),
+      radial-gradient(720px circle at 50% 108%, rgba(109,94,248,0.08), transparent 60%),
+      var(--bg);
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, black 35%, transparent 85%);
+    mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, black 35%, transparent 85%);
+  }
+  .container { max-width: 1080px; margin: 0 auto; }
+  .hero { text-align: center; margin-bottom: 56px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 8px 18px; border-radius: 999px;
+    background: var(--card); border: 1px solid var(--border);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    font-size: 13.5px; font-weight: 600; color: #a7e8cd; font-family: 'Rubik', -apple-system, 'Segoe UI', Arial, sans-serif;
+    margin-bottom: 22px;
+  }
+  .eyebrow .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+    box-shadow: 0 0 0 0 rgba(52,211,153,0.6); animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52,211,153,0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(52,211,153,0); }
+    100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+  }
+  h1 {
+    font-size: 42px; font-weight: 800; margin: 0 0 14px; letter-spacing: -0.01em;
+    background: linear-gradient(90deg, #b9adfa, #8b7cf6 45%, #34d399);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .subtitle { color: var(--muted); font-size: 16px; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+  .app-card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    text-decoration: none;
+    color: var(--text);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .app-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  }
+  .app-card.upcoming {
+    border-style: dashed;
+    border-color: rgba(255,255,255,0.14);
+    box-shadow: none;
+    opacity: 0.6;
+  }
+  .card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+  .icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+  }
+  .icon svg { width: 22px; height: 22px; }
+  .icon.violet { background: linear-gradient(135deg, var(--violet), var(--violet-2)); box-shadow: 0 10px 24px -6px rgba(139,124,246,0.55); }
+  .icon.green { background: linear-gradient(135deg, var(--green), var(--green-2)); box-shadow: 0 10px 24px -6px rgba(52,211,153,0.5); }
+  .icon.upcoming { background: rgba(255,255,255,0.06); color: var(--muted); box-shadow: none; }
+  .chev-wrap { color: var(--muted); transition: transform 0.22s ease, color 0.22s ease; }
+  .app-card:hover .chev-wrap { transform: translateX(-4px); color: var(--text); }
+  .chev-wrap svg { width: 18px; height: 18px; }
+  .card-name { font-size: 21px; font-weight: 700; margin-bottom: 6px; }
+  .card-desc { font-size: 13.5px; color: var(--muted); margin-bottom: 20px; line-height: 1.5; }
+  .card-stats { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+  .version-chip {
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
+    background: rgba(139,124,246,0.1); border: 1px solid rgba(139,124,246,0.28);
+    padding: 3px 10px; border-radius: 8px; color: #cdc5fc;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    font-family: 'JetBrains Mono', monospace; white-space: nowrap;
+  }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .badge.ok { background: rgba(52,211,153,0.12); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.28); }
+  .badge.ok .dot { background: #6ee7b7; box-shadow: 0 0 8px rgba(110,231,183,0.7); }
+  .badge.fail { background: rgba(251,113,133,0.12); color: var(--rose); border: 1px solid rgba(251,113,133,0.28); }
+  .badge.fail .dot { background: var(--rose); box-shadow: 0 0 8px rgba(251,113,133,0.7); }
+  .card-updated { font-size: 11.5px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  footer {
+    text-align: center; color: var(--muted); font-size: 12px; margin-top: 56px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="eyebrow"><span class="dot"></span>מערכות פעילות</div>
+      <h1>מרכז בקרת אוטומציה</h1>
+      <div class="subtitle">בחר אפליקציה כדי לצפות בהיסטוריית הריצות ובדוחות המלאים שלה</div>
+    </div>
+    <div class="grid">
+      
+    <a class="app-card violet" href="../leumitfit-report/">
+      <div class="card-top">
+        <div class="icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-7 4 14 2.5-7H21"/></svg></div>
+        <div class="chev-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></div>
+      </div>
+      <div class="card-name">לאומית FIT+</div>
+      <div class="card-desc">אפליקציית הכושר וההטבות של לאומית</div>
+      <div class="card-stats">
+          <span class="version-chip">1.30.6 (293) d</span>
+          <span class="badge ok"><span class="dot"></span>8/8 עברו</span>
+        </div>
+        <div class="card-updated">עודכן: 23/08/2026 &middot; 10:00:08</div>
+    </a>
+    <a class="app-card green" href="../clalitactive-report/">
+      <div class="card-top">
+        <div class="icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-7 4 14 2.5-7H21"/></svg></div>
+        <div class="chev-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></div>
+      </div>
+      <div class="card-name">כללית active+</div>
+      <div class="card-desc">אפליקציית הכושר וההטבות של כללית</div>
+      <div class="card-stats">
+          <span class="version-chip">לא זוהתה גרסה</span>
+          <span class="badge ok"><span class="dot"></span>1/1 עברו</span>
+        </div>
+        <div class="card-updated">עודכן: 24/08/2026 &middot; 10:42:56</div>
+    </a>
+    <div class="app-card upcoming">
+      <div class="card-top">
+        <div class="icon upcoming"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      </div>
+      <div class="card-name">אפליקציה נוספת</div>
+      <div class="card-desc">בקרוב יתווסף כאן פרויקט אוטומציה נוסף</div>
+    </div>
+    </div>
+    <footer>עודכן לאחרונה: 24/08/2026 11:13:51</footer>
+  </div>
+</body>
+</html>
