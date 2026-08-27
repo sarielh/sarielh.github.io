@@ -53,7 +53,7 @@
     -webkit-mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, black 35%, transparent 85%);
     mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, black 35%, transparent 85%);
   }
-  .container { max-width: 1040px; margin: 0 auto; }
+  .container { max-width: 1080px; margin: 0 auto; }
   .topbar {
     display: flex;
     align-items: flex-start;
@@ -173,6 +173,62 @@
     margin: 0 4px 14px;
     font-weight: 600;
   }
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .search-wrap { position: relative; flex: 1; min-width: 200px; }
+  .search-wrap svg {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px; color: var(--muted); pointer-events: none;
+  }
+  .search-wrap input {
+    width: 100%;
+    padding: 10px 40px 10px 14px;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Rubik', -apple-system, 'Segoe UI', Arial, sans-serif;
+    font-size: 13.5px;
+    outline: none;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: border-color 0.15s ease;
+  }
+  .search-wrap input:focus { border-color: rgba(139,124,246,0.5); }
+  .search-wrap input::placeholder { color: var(--muted); }
+  .filter-pills { display: flex; gap: 8px; }
+  .pill {
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Rubik', -apple-system, 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .pill.active { background: rgba(139,124,246,0.16); border-color: rgba(139,124,246,0.4); color: #c4baf9; }
+  .compare-btn {
+    padding: 9px 18px;
+    border-radius: 999px;
+    background: rgba(52,211,153,0.12);
+    border: 1px solid rgba(52,211,153,0.3);
+    color: #6ee7b7;
+    font-family: 'Rubik', -apple-system, 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
+  }
+  .compare-btn:disabled { opacity: 0.35; cursor: not-allowed; }
   .table-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -182,6 +238,7 @@
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 24px 60px rgba(0,0,0,0.45);
   }
+  .table-scroll { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; }
   th {
     text-align: right;
@@ -193,6 +250,7 @@
     letter-spacing: 0.07em;
     font-weight: 600;
     border-bottom: 1px solid var(--border);
+    white-space: nowrap;
   }
   td {
     padding: 16px 22px;
@@ -202,6 +260,13 @@
   td.mono { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 13.5px; }
   tbody tr { cursor: pointer; transition: background 0.15s ease; }
   tbody tr:hover { background: rgba(255,255,255,0.045); }
+  .compare-check { width: 16px; height: 16px; accent-color: var(--violet); cursor: pointer; }
+  .dots-row { display: flex; gap: 4px; flex-wrap: wrap; max-width: 150px; }
+  .test-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+  .test-dot.ok { background: #6ee7b7; box-shadow: 0 0 5px rgba(110,231,183,0.6); }
+  .test-dot.fail { background: var(--rose); box-shadow: 0 0 5px rgba(251,113,133,0.6); }
+  .test-dot.skip { background: var(--muted); }
+  .no-data { color: var(--muted); font-size: 12px; }
   .version-chip {
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
@@ -210,6 +275,7 @@
     padding: 3px 11px;
     border-radius: 8px;
     color: #cdc5fc;
+    white-space: nowrap;
   }
   .badge {
     display: inline-flex;
@@ -227,6 +293,7 @@
   .badge.ok .dot { background: #6ee7b7; box-shadow: 0 0 8px rgba(110,231,183,0.7); }
   .badge.fail { background: rgba(251,113,133,0.12); color: var(--rose); border: 1px solid rgba(251,113,133,0.28); }
   .badge.fail .dot { background: var(--rose); box-shadow: 0 0 8px rgba(251,113,133,0.7); }
+  .badge.na { background: rgba(255,255,255,0.06); color: var(--muted); border: 1px solid var(--border); }
   .view-link {
     color: #c4baf9;
     text-decoration: none;
@@ -255,6 +322,51 @@
     width: 6px; height: 6px; border-radius: 50%;
     background: var(--green);
     box-shadow: 0 0 6px rgba(52,211,153,0.7);
+  }
+  .compare-modal {
+    display: none;
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .compare-modal.open { display: flex; }
+  .compare-modal-inner {
+    background: #0d0e12;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    max-width: 680px; width: 100%;
+    max-height: 80vh; overflow-y: auto;
+    padding: 24px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  }
+  .compare-modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .modal-close { background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; line-height: 1; padding: 4px; }
+  .modal-close:hover { color: var(--text); }
+  .compare-table { width: 100%; border-collapse: collapse; }
+  .compare-table th { text-align: right; padding: 8px 10px; font-size: 11px; color: var(--muted); text-transform: uppercase; border-bottom: 1px solid var(--border); }
+  .compare-table td { padding: 8px 10px; font-size: 13px; border-top: 1px solid var(--border); }
+  .compare-table tr.diff-row { background: rgba(251,113,133,0.07); }
+  .topbar > div:first-child { min-width: 0; }
+  .stat-card { min-width: 0; }
+  .stat-card .value { overflow-wrap: break-word; }
+  @media (max-width: 720px) {
+    body { padding: 40px 16px 32px; }
+    .container { max-width: 100%; }
+    h1 { font-size: 22px; }
+    .subtitle { font-size: 12px; }
+    .top-actions { width: 100%; }
+    .home-btn, .live-badge { flex: 1; justify-content: center; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat-card { padding: 15px 14px; border-radius: 16px; }
+    .stat-card .value { font-size: 15px; }
+    .stat-card .icon { width: 34px; height: 34px; margin-bottom: 10px; }
+    table { min-width: 680px; }
+    .toolbar { flex-direction: column; align-items: stretch; }
+    .search-wrap { min-width: 0; }
+    .filter-pills { overflow-x: auto; }
   }
 </style>
 </head>
@@ -295,65 +407,175 @@
     </div>
 
     <div class="section-title">היסטוריית ריצות</div>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="searchInput" type="text" placeholder="חיפוש לפי גרסה...">
+      </div>
+      <div class="filter-pills">
+        <button class="pill active" data-filter="all">הכל</button>
+        <button class="pill" data-filter="ok">עברו</button>
+        <button class="pill" data-filter="fail">נכשלו</button>
+      </div>
+      <button id="compareBtn" class="compare-btn" disabled>השווה ריצות נבחרות (<span id="compareCount">0</span>/2)</button>
+    </div>
     <div class="table-card">
+      <div class="table-scroll">
       <table>
         <thead>
           <tr>
+            <th></th>
             <th>גרסה</th>
             <th>תאריך</th>
             <th>שעה</th>
             <th>תוצאה</th>
+            <th>בדיקות</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           
-    <tr onclick="location.href='runs/1.30.6__294__d__20260825_165828/index.html'">
+    <tr data-version="1.30.6 (294) d" data-status="ok" data-tests="{&quot;test_store&quot;: &quot;passed&quot;, &quot;test_onboarding&quot;: &quot;passed&quot;, &quot;test_trainer_ai&quot;: &quot;passed&quot;, &quot;test_performance&quot;: &quot;passed&quot;, &quot;test_freefit&quot;: &quot;passed&quot;, &quot;test_daily_workout&quot;: &quot;passed&quot;, &quot;test_login&quot;: &quot;passed&quot;, &quot;test_communities&quot;: &quot;passed&quot;}" onclick="location.href='runs/1.30.6__294__d__20260825_165828/index.html'">
+      <td onclick="event.stopPropagation()"><input type="checkbox" class="compare-check" data-label="1.30.6 (294) d - 25/08/2026 16:58:28" onchange="onCompareToggle(this)"></td>
       <td><span class="version-chip">1.30.6 (294) d</span></td>
       <td>25/08/2026</td>
       <td class="mono">16:58:28</td>
       <td><span class="badge ok"><span class="dot"></span>8/8 עברו</span></td>
+      <td><div class="dots-row"><span class="test-dot ok" title="test_communities: passed"></span><span class="test-dot ok" title="test_daily_workout: passed"></span><span class="test-dot ok" title="test_freefit: passed"></span><span class="test-dot ok" title="test_login: passed"></span><span class="test-dot ok" title="test_onboarding: passed"></span><span class="test-dot ok" title="test_performance: passed"></span><span class="test-dot ok" title="test_store: passed"></span><span class="test-dot ok" title="test_trainer_ai: passed"></span></div></td>
       <td><a href="runs/1.30.6__294__d__20260825_165828/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
-    <tr onclick="location.href='runs/1.30.6__293__d__20260823_100008/index.html'">
+    <tr data-version="1.30.6 (293) d" data-status="ok" data-tests="{&quot;test_communities&quot;: &quot;passed&quot;, &quot;test_login&quot;: &quot;passed&quot;, &quot;test_freefit&quot;: &quot;passed&quot;, &quot;test_onboarding&quot;: &quot;passed&quot;, &quot;test_performance&quot;: &quot;passed&quot;, &quot;test_daily_workout&quot;: &quot;passed&quot;, &quot;test_store&quot;: &quot;passed&quot;, &quot;test_trainer_ai&quot;: &quot;passed&quot;}" onclick="location.href='runs/1.30.6__293__d__20260823_100008/index.html'">
+      <td onclick="event.stopPropagation()"><input type="checkbox" class="compare-check" data-label="1.30.6 (293) d - 23/08/2026 10:00:08" onchange="onCompareToggle(this)"></td>
       <td><span class="version-chip">1.30.6 (293) d</span></td>
       <td>23/08/2026</td>
       <td class="mono">10:00:08</td>
       <td><span class="badge ok"><span class="dot"></span>8/8 עברו</span></td>
+      <td><div class="dots-row"><span class="test-dot ok" title="test_communities: passed"></span><span class="test-dot ok" title="test_daily_workout: passed"></span><span class="test-dot ok" title="test_freefit: passed"></span><span class="test-dot ok" title="test_login: passed"></span><span class="test-dot ok" title="test_onboarding: passed"></span><span class="test-dot ok" title="test_performance: passed"></span><span class="test-dot ok" title="test_store: passed"></span><span class="test-dot ok" title="test_trainer_ai: passed"></span></div></td>
       <td><a href="runs/1.30.6__293__d__20260823_100008/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
-    <tr onclick="location.href='runs/1.30.6__292__d__20260820_131415/index.html'">
+    <tr data-version="1.30.6 (292) d" data-status="ok" data-tests="{&quot;test_trainer_ai&quot;: &quot;passed&quot;, &quot;test_onboarding&quot;: &quot;passed&quot;, &quot;test_login&quot;: &quot;passed&quot;, &quot;test_store&quot;: &quot;passed&quot;, &quot;test_daily_workout&quot;: &quot;passed&quot;, &quot;test_performance&quot;: &quot;passed&quot;, &quot;test_communities&quot;: &quot;passed&quot;, &quot;test_freefit&quot;: &quot;passed&quot;}" onclick="location.href='runs/1.30.6__292__d__20260820_131415/index.html'">
+      <td onclick="event.stopPropagation()"><input type="checkbox" class="compare-check" data-label="1.30.6 (292) d - 20/08/2026 13:14:15" onchange="onCompareToggle(this)"></td>
       <td><span class="version-chip">1.30.6 (292) d</span></td>
       <td>20/08/2026</td>
       <td class="mono">13:14:15</td>
       <td><span class="badge ok"><span class="dot"></span>8/8 עברו</span></td>
+      <td><div class="dots-row"><span class="test-dot ok" title="test_communities: passed"></span><span class="test-dot ok" title="test_daily_workout: passed"></span><span class="test-dot ok" title="test_freefit: passed"></span><span class="test-dot ok" title="test_login: passed"></span><span class="test-dot ok" title="test_onboarding: passed"></span><span class="test-dot ok" title="test_performance: passed"></span><span class="test-dot ok" title="test_store: passed"></span><span class="test-dot ok" title="test_trainer_ai: passed"></span></div></td>
       <td><a href="runs/1.30.6__292__d__20260820_131415/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
-    <tr onclick="location.href='runs/1.30.6__290__d__20260819_095131/index.html'">
+    <tr data-version="1.30.6 (290) d" data-status="ok" data-tests="{&quot;test_login&quot;: &quot;passed&quot;, &quot;test_freefit&quot;: &quot;passed&quot;, &quot;test_daily_workout&quot;: &quot;passed&quot;, &quot;test_store&quot;: &quot;passed&quot;, &quot;test_performance&quot;: &quot;passed&quot;, &quot;test_onboarding&quot;: &quot;passed&quot;, &quot;test_trainer_ai&quot;: &quot;passed&quot;, &quot;test_communities&quot;: &quot;passed&quot;}" onclick="location.href='runs/1.30.6__290__d__20260819_095131/index.html'">
+      <td onclick="event.stopPropagation()"><input type="checkbox" class="compare-check" data-label="1.30.6 (290) d - 19/08/2026 09:51:31" onchange="onCompareToggle(this)"></td>
       <td><span class="version-chip">1.30.6 (290) d</span></td>
       <td>19/08/2026</td>
       <td class="mono">09:51:31</td>
       <td><span class="badge ok"><span class="dot"></span>8/8 עברו</span></td>
+      <td><div class="dots-row"><span class="test-dot ok" title="test_communities: passed"></span><span class="test-dot ok" title="test_daily_workout: passed"></span><span class="test-dot ok" title="test_freefit: passed"></span><span class="test-dot ok" title="test_login: passed"></span><span class="test-dot ok" title="test_onboarding: passed"></span><span class="test-dot ok" title="test_performance: passed"></span><span class="test-dot ok" title="test_store: passed"></span><span class="test-dot ok" title="test_trainer_ai: passed"></span></div></td>
       <td><a href="runs/1.30.6__290__d__20260819_095131/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
-    <tr onclick="location.href='runs/1.30.6__289__d__20260818_202929/index.html'">
+    <tr data-version="1.30.6 (289) d" data-status="ok" data-tests="{&quot;test_freefit&quot;: &quot;passed&quot;, &quot;test_communities&quot;: &quot;passed&quot;, &quot;test_login&quot;: &quot;passed&quot;, &quot;test_trainer_ai&quot;: &quot;passed&quot;, &quot;test_daily_workout&quot;: &quot;passed&quot;, &quot;test_performance&quot;: &quot;passed&quot;, &quot;test_store&quot;: &quot;passed&quot;, &quot;test_onboarding&quot;: &quot;passed&quot;}" onclick="location.href='runs/1.30.6__289__d__20260818_202929/index.html'">
+      <td onclick="event.stopPropagation()"><input type="checkbox" class="compare-check" data-label="1.30.6 (289) d - 18/08/2026 20:29:29" onchange="onCompareToggle(this)"></td>
       <td><span class="version-chip">1.30.6 (289) d</span></td>
       <td>18/08/2026</td>
       <td class="mono">20:29:29</td>
       <td><span class="badge ok"><span class="dot"></span>8/8 עברו</span></td>
+      <td><div class="dots-row"><span class="test-dot ok" title="test_communities: passed"></span><span class="test-dot ok" title="test_daily_workout: passed"></span><span class="test-dot ok" title="test_freefit: passed"></span><span class="test-dot ok" title="test_login: passed"></span><span class="test-dot ok" title="test_onboarding: passed"></span><span class="test-dot ok" title="test_performance: passed"></span><span class="test-dot ok" title="test_store: passed"></span><span class="test-dot ok" title="test_trainer_ai: passed"></span></div></td>
       <td><a href="runs/1.30.6__289__d__20260818_202929/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
-    <tr onclick="location.href='runs/288_dev__20260818_153342/index.html'">
+    <tr data-version="1.30.6 (288) d" data-status="fail" data-tests="{&quot;test_communities&quot;: &quot;broken&quot;, &quot;test_trainer_ai&quot;: &quot;passed&quot;, &quot;test_login&quot;: &quot;passed&quot;, &quot;test_daily_workout&quot;: &quot;passed&quot;, &quot;test_store&quot;: &quot;passed&quot;, &quot;test_freefit&quot;: &quot;passed&quot;, &quot;test_performance&quot;: &quot;passed&quot;, &quot;test_onboarding&quot;: &quot;passed&quot;}" onclick="location.href='runs/288_dev__20260818_153342/index.html'">
+      <td onclick="event.stopPropagation()"><input type="checkbox" class="compare-check" data-label="1.30.6 (288) d - 18/08/2026 15:33:42" onchange="onCompareToggle(this)"></td>
       <td><span class="version-chip">1.30.6 (288) d</span></td>
       <td>18/08/2026</td>
       <td class="mono">15:33:42</td>
       <td><span class="badge fail"><span class="dot"></span>7/8 עברו</span></td>
+      <td><div class="dots-row"><span class="test-dot fail" title="test_communities: broken"></span><span class="test-dot ok" title="test_daily_workout: passed"></span><span class="test-dot ok" title="test_freefit: passed"></span><span class="test-dot ok" title="test_login: passed"></span><span class="test-dot ok" title="test_onboarding: passed"></span><span class="test-dot ok" title="test_performance: passed"></span><span class="test-dot ok" title="test_store: passed"></span><span class="test-dot ok" title="test_trainer_ai: passed"></span></div></td>
       <td><a href="runs/288_dev__20260818_153342/index.html" class="view-link">צפייה בדוח <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="chev"><path d="M15 6l-6 6 6 6"/></svg></a></td>
     </tr>
         </tbody>
       </table>
+      </div>
     </div>
-    <footer><span class="fdot"></span>עודכן לאחרונה: 25/08/2026 17:07:21</footer>
+    <footer><span class="fdot"></span>עודכן לאחרונה: 27/08/2026 18:47:58</footer>
   </div>
+
+  <div id="compareModal" class="compare-modal">
+    <div class="compare-modal-inner">
+      <div class="compare-modal-head">
+        <div class="section-title" style="margin:0">השוואת ריצות</div>
+        <button id="compareClose" class="modal-close">&times;</button>
+      </div>
+      <table class="compare-table">
+        <thead><tr><th>בדיקה</th><th id="compareLabelA"></th><th id="compareLabelB"></th></tr></thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var searchInput = document.getElementById('searchInput');
+    var pills = document.querySelectorAll('.pill');
+    var rows = document.querySelectorAll('tbody tr[data-version]');
+    var activeFilter = 'all';
+
+    function applyFilters() {
+      var q = (searchInput.value || '').trim().toLowerCase();
+      rows.forEach(function(tr) {
+        var matchesText = !q || tr.dataset.version.indexOf(q) !== -1;
+        var matchesStatus = activeFilter === 'all' || tr.dataset.status === activeFilter;
+        tr.style.display = (matchesText && matchesStatus) ? '' : 'none';
+      });
+    }
+    if (searchInput) searchInput.addEventListener('input', applyFilters);
+    pills.forEach(function(p) {
+      p.addEventListener('click', function() {
+        pills.forEach(function(x) { x.classList.remove('active'); });
+        p.classList.add('active');
+        activeFilter = p.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    var selected = [];
+    window.onCompareToggle = function(cb) {
+      if (cb.checked) {
+        if (selected.length >= 2) { cb.checked = false; return; }
+        selected.push(cb);
+      } else {
+        selected = selected.filter(function(x) { return x !== cb; });
+      }
+      document.getElementById('compareCount').textContent = selected.length;
+      document.getElementById('compareBtn').disabled = selected.length !== 2;
+    };
+
+    function statusPill(s) {
+      var cls = s === 'passed' ? 'ok' : (s === undefined ? 'na' : 'fail');
+      return '<span class="badge ' + cls + '"><span class="dot"></span>' + (s || 'לא קיים') + '</span>';
+    }
+
+    document.getElementById('compareBtn').addEventListener('click', function() {
+      if (selected.length !== 2) return;
+      var trA = selected[0].closest('tr');
+      var trB = selected[1].closest('tr');
+      var a = JSON.parse(trA.dataset.tests || '{}');
+      var b = JSON.parse(trB.dataset.tests || '{}');
+      var names = Object.keys(a).concat(Object.keys(b)).filter(function(v, i, arr) { return arr.indexOf(v) === i; }).sort();
+      var out = '';
+      names.forEach(function(n) {
+        var diff = a[n] !== b[n];
+        out += '<tr class="' + (diff ? 'diff-row' : '') + '"><td>' + n + '</td><td>' + statusPill(a[n]) + '</td><td>' + statusPill(b[n]) + '</td></tr>';
+      });
+      document.getElementById('compareLabelA').textContent = selected[0].dataset.label;
+      document.getElementById('compareLabelB').textContent = selected[1].dataset.label;
+      document.getElementById('compareBody').innerHTML = out || '<tr><td colspan="3" class="empty">אין נתוני בדיקות להשוואה</td></tr>';
+      document.getElementById('compareModal').classList.add('open');
+    });
+
+    document.getElementById('compareClose').addEventListener('click', function() {
+      document.getElementById('compareModal').classList.remove('open');
+    });
+    document.getElementById('compareModal').addEventListener('click', function(e) {
+      if (e.target.id === 'compareModal') e.currentTarget.classList.remove('open');
+    });
+  })();
+  </script>
 </body>
 </html>

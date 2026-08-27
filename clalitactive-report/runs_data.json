@@ -12,6 +12,9 @@
       "broken": 0,
       "skipped": 0,
       "unknown": 0
+    },
+    "tests": {
+      "test_app_launches": "passed"
     }
   }
 ]

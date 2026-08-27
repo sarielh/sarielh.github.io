@@ -12,6 +12,16 @@
       "broken": 0,
       "skipped": 0,
       "unknown": 0
+    },
+    "tests": {
+      "test_store": "passed",
+      "test_onboarding": "passed",
+      "test_trainer_ai": "passed",
+      "test_performance": "passed",
+      "test_freefit": "passed",
+      "test_daily_workout": "passed",
+      "test_login": "passed",
+      "test_communities": "passed"
     }
   },
   {
@@ -27,6 +37,16 @@
       "broken": 0,
       "skipped": 0,
       "unknown": 0
+    },
+    "tests": {
+      "test_communities": "passed",
+      "test_login": "passed",
+      "test_freefit": "passed",
+      "test_onboarding": "passed",
+      "test_performance": "passed",
+      "test_daily_workout": "passed",
+      "test_store": "passed",
+      "test_trainer_ai": "passed"
     }
   },
   {
@@ -42,6 +62,16 @@
       "broken": 0,
       "skipped": 0,
       "unknown": 0
+    },
+    "tests": {
+      "test_trainer_ai": "passed",
+      "test_onboarding": "passed",
+      "test_login": "passed",
+      "test_store": "passed",
+      "test_daily_workout": "passed",
+      "test_performance": "passed",
+      "test_communities": "passed",
+      "test_freefit": "passed"
     }
   },
   {
@@ -57,6 +87,16 @@
       "broken": 0,
       "skipped": 0,
       "unknown": 0
+    },
+    "tests": {
+      "test_login": "passed",
+      "test_freefit": "passed",
+      "test_daily_workout": "passed",
+      "test_store": "passed",
+      "test_performance": "passed",
+      "test_onboarding": "passed",
+      "test_trainer_ai": "passed",
+      "test_communities": "passed"
     }
   },
   {
@@ -72,6 +112,16 @@
       "broken": 0,
       "skipped": 0,
       "unknown": 0
+    },
+    "tests": {
+      "test_freefit": "passed",
+      "test_communities": "passed",
+      "test_login": "passed",
+      "test_trainer_ai": "passed",
+      "test_daily_workout": "passed",
+      "test_performance": "passed",
+      "test_store": "passed",
+      "test_onboarding": "passed"
     }
   },
   {
@@ -87,6 +137,16 @@
       "broken": 1,
       "skipped": 0,
       "unknown": 0
+    },
+    "tests": {
+      "test_communities": "broken",
+      "test_trainer_ai": "passed",
+      "test_login": "passed",
+      "test_daily_workout": "passed",
+      "test_store": "passed",
+      "test_freefit": "passed",
+      "test_performance": "passed",
+      "test_onboarding": "passed"
     }
   }
 ]
