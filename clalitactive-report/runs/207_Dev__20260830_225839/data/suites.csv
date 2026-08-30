@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","25386","אייקון היעד היומי לשינה משתנה מירוק לאפור כשלא עומדים ביעד","","2026-08-30","passed","2026-08-30","Test_Example","ClalitActiveSanity","",""
+"","39868","התחברות עם קוד OTP","","2026-08-30","passed","2026-08-30","Test_Example","ClalitActiveSanity","",""
+"","18198","האפליקציה עולה ומגיבה","","2026-08-30","passed","2026-08-30","Test_Example","ClalitActiveSanity","",""
+"","90975","שאלות היכרות (מגדר, תאריך לידה, גובה/משקל, עישון, ספורט, מוטיבציה)","","2026-08-30","passed","2026-08-30","Test_Example","ClalitActiveSanity","",""
+"","62080","פתיחת כרטיסיית שינה מקרוסלת המדדים","","2026-08-30","passed","2026-08-30","Test_Example","ClalitActiveSanity","",""
