@@ -1,5 +1,24 @@
 [
   {
+    "folder": "לא_זוהתה_גרסה__20260901_005353",
+    "version": "לא זוהתה גרסה",
+    "date": "01/09/2026",
+    "time": "00:53:53",
+    "sort_key": "2026-09-01T00:53:53.243188",
+    "stats": {
+      "total": 2,
+      "passed": 1,
+      "failed": 0,
+      "broken": 1,
+      "skipped": 0,
+      "unknown": 0
+    },
+    "tests": {
+      "test_login": "broken",
+      "test_app_launches": "passed"
+    }
+  },
+  {
     "folder": "207_Dev__20260901_003459",
     "version": "207 Dev",
     "date": "01/09/2026",

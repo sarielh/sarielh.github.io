@@ -1,0 +1,1 @@
+[{"uid":"9369cc784ba6f5a1","name":"האפליקציה עולה ומגיבה","time":{"start":1788213189832,"stop":1788213207283,"duration":17451},"status":"passed","severity":"normal"},{"uid":"5290c6f463f1ce12","name":"התחברות עם קוד OTP","time":{"start":1788213207289,"stop":1788213228343,"duration":21054},"status":"broken","severity":"normal"}]
