@@ -1,5 +1,29 @@
 [
   {
+    "folder": "207_Dev__20260901_011224",
+    "version": "207 Dev",
+    "date": "01/09/2026",
+    "time": "01:12:24",
+    "sort_key": "2026-09-01T01:12:24.654427",
+    "stats": {
+      "total": 7,
+      "passed": 5,
+      "failed": 2,
+      "broken": 0,
+      "skipped": 0,
+      "unknown": 0
+    },
+    "tests": {
+      "test_nutrition": "failed",
+      "test_water": "failed",
+      "test_app_launches": "passed",
+      "test_sleep_below_goal": "passed",
+      "test_onboarding": "passed",
+      "test_sleep": "passed",
+      "test_login": "passed"
+    }
+  },
+  {
     "folder": "לא_זוהתה_גרסה__20260901_005353",
     "version": "לא זוהתה גרסה",
     "date": "01/09/2026",
