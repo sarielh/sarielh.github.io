@@ -1,0 +1,1 @@
+Message: no such element (An element could not be located on the page using the given search parameters (XPATH='//android.view.View[@bounds='[702,1289][822,1409]' and @clickable='true']')) 

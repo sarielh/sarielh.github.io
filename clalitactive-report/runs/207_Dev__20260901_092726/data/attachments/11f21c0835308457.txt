@@ -1,0 +1,5 @@
+כישלון בטסט: כפתור 'הבנתי' לא נמצא/נלחץ בחלון שנפתח אחרי 'בחירה מהגלריה'!
+assert False
+ +  where False = dismiss_home_screen_popups()
+ +    where dismiss_home_screen_popups = <pages.home_page.HomePage object at 0x0000020C51899BE0>.dismiss_home_screen_popups
+ +      where <pages.home_page.HomePage object at 0x0000020C51899BE0> = <ClalitActiveSanity_pages.Test_Example object at 0x0000020C52B4C750>.home
