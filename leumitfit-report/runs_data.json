@@ -1,5 +1,30 @@
 [
   {
+    "folder": "1.30.7__299__d__20260902_150833",
+    "version": "1.30.7 (299) d",
+    "date": "02/09/2026",
+    "time": "15:08:33",
+    "sort_key": "2026-09-02T15:08:33.518715",
+    "stats": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "unknown": 0
+    },
+    "tests": {
+      "test_store": "passed",
+      "test_daily_workout": "passed",
+      "test_communities": "passed",
+      "test_login": "passed",
+      "test_onboarding": "passed",
+      "test_performance": "passed",
+      "test_freefit": "passed",
+      "test_trainer_ai": "passed"
+    }
+  },
+  {
     "folder": "1.30.6__295__d__20260830_171502",
     "version": "1.30.6 (295) d",
     "date": "30/08/2026",

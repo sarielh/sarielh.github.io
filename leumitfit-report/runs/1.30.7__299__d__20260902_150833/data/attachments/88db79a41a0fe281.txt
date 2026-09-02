@@ -1,0 +1,5 @@
+STATUS: תוקידבה רזויל גנידרובנוא סופיא - {'isSuccessful': True, 'statusCode': 'Ok', 'statusMessage': 'Ok', 'displayMessage': 'Ok', 'data': 'Onboarding cleared'}
+Success
+STATUS: רישכמב היצקילפאה ןומטמ הקונ
+STATUS: 299) 1.30.7 - התהוזש היצקילפאה תסרג) d
+STATUS: דוק OTP 006983 - לבקתהש
