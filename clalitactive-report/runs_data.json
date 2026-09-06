@@ -1,5 +1,83 @@
 [
   {
+    "folder": "209_Dev__20260906_155159",
+    "version": "209 Dev",
+    "date": "06/09/2026",
+    "time": "15:51:59",
+    "sort_key": "2026-09-06T15:51:59.795085",
+    "stats": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "unknown": 0
+    },
+    "tests": {
+      "test_join_group_via_link": {
+        "status": "passed",
+        "duration_ms": 18549
+      },
+      "test_performance_nutrition": {
+        "status": "passed",
+        "duration_ms": 49437
+      },
+      "test_group_rejoin_via_search": {
+        "status": "passed",
+        "duration_ms": 71650
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 106893
+      },
+      "test_group_date_navigation": {
+        "status": "passed",
+        "duration_ms": 80849
+      },
+      "test_performance_steps": {
+        "status": "passed",
+        "duration_ms": 54229
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 25320
+      },
+      "test_performance_water": {
+        "status": "passed",
+        "duration_ms": 36575
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 10894
+      },
+      "test_water": {
+        "status": "passed",
+        "duration_ms": 32861
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 32969
+      },
+      "test_groups": {
+        "status": "passed",
+        "duration_ms": 88517
+      },
+      "test_nutrition": {
+        "status": "passed",
+        "duration_ms": 333891
+      },
+      "test_performance_sleep": {
+        "status": "passed",
+        "duration_ms": 37815
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 46731
+      }
+    },
+    "duration_ms": 1027180
+  },
+  {
     "folder": "209_Dev__20260906_112717",
     "version": "209 Dev",
     "date": "06/09/2026",
