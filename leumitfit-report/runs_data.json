@@ -14,15 +14,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_store": "passed",
-      "test_daily_workout": "passed",
-      "test_communities": "passed",
-      "test_login": "passed",
-      "test_onboarding": "passed",
-      "test_performance": "passed",
-      "test_freefit": "passed",
-      "test_trainer_ai": "passed"
-    }
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 269453
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 24864
+      },
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 75205
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 57145
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 100012
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 12078
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 25215
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 34353
+      }
+    },
+    "duration_ms": 598371
   },
   {
     "folder": "1.30.6__295__d__20260830_171502",
@@ -39,15 +64,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_daily_workout": "passed",
-      "test_login": "passed",
-      "test_trainer_ai": "passed",
-      "test_communities": "passed",
-      "test_performance": "passed",
-      "test_onboarding": "passed",
-      "test_store": "passed",
-      "test_freefit": "passed"
-    }
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 25093
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 55239
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 31591
+      },
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 74774
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 11553
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 102820
+      },
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 249577
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 25102
+      }
+    },
+    "duration_ms": 575780
   },
   {
     "folder": "1.30.6__294__d__20260828_164205",
@@ -64,15 +114,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_onboarding": "passed",
-      "test_daily_workout": "passed",
-      "test_performance": "passed",
-      "test_communities": "passed",
-      "test_store": "passed",
-      "test_freefit": "passed",
-      "test_trainer_ai": "passed",
-      "test_login": "passed"
-    }
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 121218
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 28425
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 12641
+      },
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 86239
+      },
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 275229
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 27607
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 54262
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 61837
+      }
+    },
+    "duration_ms": 667515
   },
   {
     "folder": "1.30.6__294__d__20260825_165828",
@@ -89,15 +164,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_store": "passed",
-      "test_onboarding": "passed",
-      "test_trainer_ai": "passed",
-      "test_performance": "passed",
-      "test_freefit": "passed",
-      "test_daily_workout": "passed",
-      "test_login": "passed",
-      "test_communities": "passed"
-    }
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 236476
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 101588
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 55742
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 11447
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 25383
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 25352
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 56634
+      },
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 76872
+      }
+    },
+    "duration_ms": 1119602
   },
   {
     "folder": "1.30.6__293__d__20260823_100008",
@@ -114,15 +214,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_communities": "passed",
-      "test_login": "passed",
-      "test_freefit": "passed",
-      "test_onboarding": "passed",
-      "test_performance": "passed",
-      "test_daily_workout": "passed",
-      "test_store": "passed",
-      "test_trainer_ai": "passed"
-    }
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 76223
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 57046
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 25375
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 97865
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 11490
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 26311
+      },
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 245420
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 32589
+      }
+    },
+    "duration_ms": 572347
   },
   {
     "folder": "1.30.6__292__d__20260820_131415",
@@ -139,15 +264,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_trainer_ai": "passed",
-      "test_onboarding": "passed",
-      "test_login": "passed",
-      "test_store": "passed",
-      "test_daily_workout": "passed",
-      "test_performance": "passed",
-      "test_communities": "passed",
-      "test_freefit": "passed"
-    }
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 59679
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 120869
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 62760
+      },
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 275208
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 28805
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 12579
+      },
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 89918
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 28133
+      }
+    },
+    "duration_ms": 1343316
   },
   {
     "folder": "1.30.6__290__d__20260819_095131",
@@ -164,15 +314,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_login": "passed",
-      "test_freefit": "passed",
-      "test_daily_workout": "passed",
-      "test_store": "passed",
-      "test_performance": "passed",
-      "test_onboarding": "passed",
-      "test_trainer_ai": "passed",
-      "test_communities": "passed"
-    }
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 56059
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 25309
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 25472
+      },
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 241897
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 11249
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 95975
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 34070
+      },
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 75754
+      }
+    },
+    "duration_ms": 1623656
   },
   {
     "folder": "1.30.6__289__d__20260818_202929",
@@ -189,15 +364,40 @@
       "unknown": 0
     },
     "tests": {
-      "test_freefit": "passed",
-      "test_communities": "passed",
-      "test_login": "passed",
-      "test_trainer_ai": "passed",
-      "test_daily_workout": "passed",
-      "test_performance": "passed",
-      "test_store": "passed",
-      "test_onboarding": "passed"
-    }
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 25695
+      },
+      "test_communities": {
+        "status": "passed",
+        "duration_ms": 74933
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 60159
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 31580
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 27207
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 11606
+      },
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 261213
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 96322
+      }
+    },
+    "duration_ms": 588739
   },
   {
     "folder": "288_dev__20260818_153342",
@@ -214,14 +414,39 @@
       "unknown": 0
     },
     "tests": {
-      "test_communities": "broken",
-      "test_trainer_ai": "passed",
-      "test_login": "passed",
-      "test_daily_workout": "passed",
-      "test_store": "passed",
-      "test_freefit": "passed",
-      "test_performance": "passed",
-      "test_onboarding": "passed"
-    }
+      "test_communities": {
+        "status": "broken",
+        "duration_ms": 7639
+      },
+      "test_trainer_ai": {
+        "status": "passed",
+        "duration_ms": 41745
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 57092
+      },
+      "test_daily_workout": {
+        "status": "passed",
+        "duration_ms": 26388
+      },
+      "test_store": {
+        "status": "passed",
+        "duration_ms": 266018
+      },
+      "test_freefit": {
+        "status": "passed",
+        "duration_ms": 25287
+      },
+      "test_performance": {
+        "status": "passed",
+        "duration_ms": 11891
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 98252
+      }
+    },
+    "duration_ms": 535471
   }
 ]
