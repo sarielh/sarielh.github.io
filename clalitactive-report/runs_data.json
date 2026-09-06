@@ -14,17 +14,48 @@
       "unknown": 0
     },
     "tests": {
-      "test_join_group_via_link": "passed",
-      "test_water": "passed",
-      "test_login": "passed",
-      "test_groups": "passed",
-      "test_sleep": "passed",
-      "test_app_launches": "passed",
-      "test_onboarding": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_nutrition": "passed",
-      "test_group_date_navigation": "passed"
-    }
+      "test_join_group_via_link": {
+        "status": "passed",
+        "duration_ms": 19334
+      },
+      "test_water": {
+        "status": "passed",
+        "duration_ms": 67150
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 34380
+      },
+      "test_groups": {
+        "status": "passed",
+        "duration_ms": 90569
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 48987
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 11056
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 109183
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 26438
+      },
+      "test_nutrition": {
+        "status": "passed",
+        "duration_ms": 339229
+      },
+      "test_group_date_navigation": {
+        "status": "passed",
+        "duration_ms": 78407
+      }
+    },
+    "duration_ms": 824781
   },
   {
     "folder": "207_Dev__20260901_154150",
@@ -41,14 +72,36 @@
       "unknown": 0
     },
     "tests": {
-      "test_sleep_below_goal": "passed",
-      "test_water": "passed",
-      "test_login": "passed",
-      "test_app_launches": "passed",
-      "test_onboarding": "passed",
-      "test_nutrition": "passed",
-      "test_sleep": "passed"
-    }
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 61058
+      },
+      "test_water": {
+        "status": "passed",
+        "duration_ms": 92532
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 33784
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17371
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 83738
+      },
+      "test_nutrition": {
+        "status": "passed",
+        "duration_ms": 729444
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 100793
+      }
+    },
+    "duration_ms": 23483002
   },
   {
     "folder": "207_Dev__20260901_094821",
@@ -65,14 +118,36 @@
       "unknown": 0
     },
     "tests": {
-      "test_sleep_below_goal": "passed",
-      "test_sleep": "passed",
-      "test_app_launches": "passed",
-      "test_nutrition": "failed",
-      "test_login": "passed",
-      "test_water": "passed",
-      "test_onboarding": "passed"
-    }
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 61058
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 100793
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17371
+      },
+      "test_nutrition": {
+        "status": "failed",
+        "duration_ms": 77521
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 33784
+      },
+      "test_water": {
+        "status": "passed",
+        "duration_ms": 92532
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 83738
+      }
+    },
+    "duration_ms": 2182061
   },
   {
     "folder": "207_Dev__20260901_092726",
@@ -89,14 +164,36 @@
       "unknown": 0
     },
     "tests": {
-      "test_app_launches": "passed",
-      "test_water": "broken",
-      "test_login": "passed",
-      "test_nutrition": "failed",
-      "test_onboarding": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_sleep": "passed"
-    }
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17371
+      },
+      "test_water": {
+        "status": "broken",
+        "duration_ms": 197293
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 33784
+      },
+      "test_nutrition": {
+        "status": "failed",
+        "duration_ms": 77521
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 83738
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 61058
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 100793
+      }
+    },
+    "duration_ms": 1138731
   },
   {
     "folder": "207_Dev__20260901_011224",
@@ -113,14 +210,36 @@
       "unknown": 0
     },
     "tests": {
-      "test_nutrition": "failed",
-      "test_water": "failed",
-      "test_app_launches": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_onboarding": "passed",
-      "test_sleep": "passed",
-      "test_login": "passed"
-    }
+      "test_nutrition": {
+        "status": "failed",
+        "duration_ms": 71652
+      },
+      "test_water": {
+        "status": "failed",
+        "duration_ms": 201839
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17177
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 61437
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 96776
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 96362
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 36617
+      }
+    },
+    "duration_ms": 877426
   },
   {
     "folder": "לא_זוהתה_גרסה__20260901_005353",
@@ -137,9 +256,16 @@
       "unknown": 0
     },
     "tests": {
-      "test_login": "broken",
-      "test_app_launches": "passed"
-    }
+      "test_login": {
+        "status": "broken",
+        "duration_ms": 21054
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17451
+      }
+    },
+    "duration_ms": 38511
   },
   {
     "folder": "207_Dev__20260901_003459",
@@ -156,14 +282,36 @@
       "unknown": 0
     },
     "tests": {
-      "test_onboarding": "passed",
-      "test_login": "passed",
-      "test_nutrition": "failed",
-      "test_app_launches": "passed",
-      "test_sleep": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_water": "failed"
-    }
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 95727
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 37312
+      },
+      "test_nutrition": {
+        "status": "failed",
+        "duration_ms": 66899
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17333
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 96843
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 62481
+      },
+      "test_water": {
+        "status": "failed",
+        "duration_ms": 75024
+      }
+    },
+    "duration_ms": 474149
   },
   {
     "folder": "207_Dev__20260831_153551",
@@ -180,13 +328,32 @@
       "unknown": 0
     },
     "tests": {
-      "test_login": "passed",
-      "test_water": "passed",
-      "test_onboarding": "passed",
-      "test_sleep": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_app_launches": "passed"
-    }
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 34998
+      },
+      "test_water": {
+        "status": "passed",
+        "duration_ms": 130937
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 91447
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 99415
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 61262
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17589
+      }
+    },
+    "duration_ms": 435666
   },
   {
     "folder": "207_Dev__20260831_104050",
@@ -203,13 +370,32 @@
       "unknown": 0
     },
     "tests": {
-      "test_app_launches": "passed",
-      "test_sleep": "passed",
-      "test_onboarding": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_login": "passed",
-      "test_water": "passed"
-    }
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17108
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 99191
+      },
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 93792
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 60437
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 36177
+      },
+      "test_water": {
+        "status": "passed",
+        "duration_ms": 96159
+      }
+    },
+    "duration_ms": 402885
   },
   {
     "folder": "207_Dev__20260830_233621",
@@ -226,12 +412,28 @@
       "unknown": 0
     },
     "tests": {
-      "test_onboarding": "passed",
-      "test_app_launches": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_login": "passed",
-      "test_sleep": "passed"
-    }
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 96260
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 18042
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 26505
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 38914
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 62487
+      }
+    },
+    "duration_ms": 242249
   },
   {
     "folder": "207_Dev__20260830_231550",
@@ -248,12 +450,28 @@
       "unknown": 0
     },
     "tests": {
-      "test_onboarding": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_sleep": "passed",
-      "test_app_launches": "passed",
-      "test_login": "passed"
-    }
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 90975
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 25386
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 62080
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 18198
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 39868
+      }
+    },
+    "duration_ms": 236555
   },
   {
     "folder": "207_Dev__20260830_225839",
@@ -270,12 +488,28 @@
       "unknown": 0
     },
     "tests": {
-      "test_onboarding": "passed",
-      "test_sleep_below_goal": "passed",
-      "test_sleep": "passed",
-      "test_app_launches": "passed",
-      "test_login": "passed"
-    }
+      "test_onboarding": {
+        "status": "passed",
+        "duration_ms": 90975
+      },
+      "test_sleep_below_goal": {
+        "status": "passed",
+        "duration_ms": 25386
+      },
+      "test_sleep": {
+        "status": "passed",
+        "duration_ms": 62080
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 18198
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 39868
+      }
+    },
+    "duration_ms": 236555
   },
   {
     "folder": "207_Dev__20260829_003330",
@@ -292,9 +526,16 @@
       "unknown": 0
     },
     "tests": {
-      "test_login": "passed",
-      "test_app_launches": "passed"
-    }
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 35292
+      },
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17890
+      }
+    },
+    "duration_ms": 53188
   },
   {
     "folder": "207_Dev__20260829_001948",
@@ -311,9 +552,16 @@
       "unknown": 0
     },
     "tests": {
-      "test_app_launches": "passed",
-      "test_login": "passed"
-    }
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17609
+      },
+      "test_login": {
+        "status": "passed",
+        "duration_ms": 35380
+      }
+    },
+    "duration_ms": 52993
   },
   {
     "folder": "לא_זוהתה_גרסה__20260824_104256",
@@ -330,7 +578,11 @@
       "unknown": 0
     },
     "tests": {
-      "test_app_launches": "passed"
-    }
+      "test_app_launches": {
+        "status": "passed",
+        "duration_ms": 17306
+      }
+    },
+    "duration_ms": 17306
   }
 ]
